@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  /* Palette: Dusty Blue, Champagne Gold, Soft White, Charcoal */
+  --color-primary: #bfa15f;
+  /* Champagne Gold */
+  --color-secondary: #8da9c4;
+  /* Dusty Blue (Accent) */
+  --color-background: #faf9f6;
+  /* Off-white / Eggshell */
+  --color-surface: #ffffff;
+  --color-text: #2c2c2c;
+  /* Soft Charcoal */
+  --color-text-light: #666666;
+
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  --radius-lg: 2px;
+  /* Sharp, elegant corners */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Login Styling - High End Invitation */
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('https://www.transparenttextures.com/patterns/cream-paper.png');
+  text-align: center;
+  padding: 1rem;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 4rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 20px 50px -20px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.ornament {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.login-card h2 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+}
+
+.input-wrapper {
+  margin-bottom: 2rem;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-align: center;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.error-input {
+  border-bottom-color: #e57373 !important;
+  color: #c62828;
+}
+
+.login-card button {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  width: 100%;
+  letter-spacing: 0.1em;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.login-card button:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.hint {
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  color: #999;
+  letter-spacing: 0.05em;
+}
+
+/* Hero Styling - Parallax */
+.hero {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -200px;
+  /* Extra height for parallax */
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.date {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+/* Gallery Styling - Masonry */
+.gallery {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.album-section {
+  margin-bottom: 6rem;
+}
+
+.album-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.album-section h3 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.separator {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-text);
+  margin: 1rem auto;
+  opacity: 0.3;
+}
+
+.photo-masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .photo-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photo-masonry {
+    column-count: 3;
+  }
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+}
+
+.photo-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+
+/* Lightbox Styling */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 44, 44, 0.95);
+  /* Charcoal with high opacity */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.lightbox-content img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.nav-btn,
+.close-btn {
+  background: transparent;
+  color: var(--color-background);
+  padding: 0.5rem;
+  transition: opacity 0.2s;
+  opacity: 0.7;
+}
+
+.nav-btn:hover,
+.close-btn:hover {
+  opacity: 1;
+  color: var(--color-white);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.lightbox-footer {
+  margin-top: 1.5rem;
+  color: var(--color-background);
+  text-align: center;
+}
+
+.caption {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.download-btn:hover {
+  opacity: 1;
+}
+
+/* Guestbook Styling */
+.guestbook {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+.guestbook-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.guestbook-header h3 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.guestbook-header p {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.guestbook-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .guestbook-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.guestbook form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #eee;
+}
+
+.guestbook input,
+.guestbook textarea {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-family: var(--font-body);
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.guestbook input:focus,
+.guestbook textarea:focus {
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.guestbook button {
+  background-color: var(--color-text);
+  color: white;
+  padding: 1rem;
+}
+
+.guestbook button:hover {
+  background-color: var(--color-primary);
+}
+
+.messages-list {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.message-card {
+  border-left: 2px solid var(--color-primary);
+  padding: 1rem 1.5rem;
+  background: white;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.message-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+}
+
+.message-card p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+.message-card .date {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+}
+
+.empty-state {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  margin-top: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .photo-masonry {
+    column-count: 1;
+  }
+
+  .lightbox-content .nav-btn {
+    position: absolute;
+    bottom: 20px;
+  }
+}
